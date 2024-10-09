@@ -70,7 +70,6 @@ The Recipe Website is fully responsive and can be used on both mobile and deskto
 - **Desktop View:** On larger screens, more content is displayed at once, making it easier to browse through multiple recipes.
 
 Key features include:
-- **Recipe Search and Filter:** Quickly find recipes or filter by cuisine, difficulty, or cooking time.
 - **Interactive Recipe Instructions:** Follow cooking steps with dynamic timers, images, and instructions.
 - **Responsive Navigation:** Custom navigation designed for ease of use on both touch devices and desktop.
 
@@ -84,9 +83,9 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Author(s)
 If you have any questions or feedback, feel free to contact:
 
-**Name:** [Your Name]  
-**Email:** [your-email@example.com]  
-**GitHub:** [https://github.com/yourusername](#)  
+**Name:** Fatima Abubakar 
+**Email:** zahrammcy@gmail.com  
+**GitHub:** https://github.com/fatimaabubakaradam/recipe-website.git
 **Website:** [https://recipe-website.com](#)
 
 Thank you for checking out the Recipe Website! Enjoy cooking, and feel free to contribute to the project!
