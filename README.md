@@ -84,8 +84,11 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 If you have any questions or feedback, feel free to contact:
 
 **Name:** Fatima Abubakar 
-**Email:** zahrammcy@gmail.com  
+
+**Email:** zahrammcy@gmail.com 
+
 **GitHub:** https://github.com/fatimaabubakaradam/recipe-website.git
+
 **Website:** [https://recipe-website.com](#)
 
 Thank you for checking out the Recipe Website! Enjoy cooking, and feel free to contribute to the project!
