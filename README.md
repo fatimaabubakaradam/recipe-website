@@ -1,8 +1,5 @@
-# recipe-website
-Here’s an alternative version of the README for a professional recipe website with both mobile and desktop views:
-
-# Recipe Website (Mobile and Desktop Views)
-Welcome to the Recipe Website project! This repository features a responsive recipe website, optimized for both mobile and desktop devices. It’s built using HTML, CSS, and JavaScript to ensure a user-friendly experience, making it easy for food lovers to find and cook delicious recipes on any device.
+# Recipe Website 
+Welcome to the Recipe Website project! This repository features a responsive recipe website, optimized for both mobile, tablet and desktop devices. It’s built using HTML, CSS, and JavaScript to ensure a user-friendly experience, making it easy for food lovers to find and cook delicious recipes on any device.
 
 ## Table of Contents
 
@@ -24,7 +21,7 @@ Check out the live demo of the project: https://fatimaabubakaradam.github.io/rec
 
 ## Features
 
-- **Responsive Layout:** Optimized for both mobile and desktop, ensuring a smooth experience on any screen size.
+- **Responsive Layout:** Optimized for both mobile , tablet and desktop, ensuring a smooth experience on any screen size.
 - **Recipe Categories:** Browse through multiple categories such as appetizers, main courses, desserts, and more.
 - **Recipe Search and Filter:** Quickly find recipes by name or filter by cuisine, preparation time, or difficulty.
 - **Interactive Instructions:** Step-by-step guides with timers and images for better cooking instructions.
