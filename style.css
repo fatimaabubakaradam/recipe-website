@@ -16,15 +16,13 @@ padding: 10px;
 }
 
 .chicken-list {
-  display: grid; /* Use grid layout for responsive control */
-  gap: 10px; /* Space between cards */
+  display: grid; 
+  gap: 10px; 
   margin-top: 20px;
   justify-content: center;
 }
-
-/* Default (Mobile-first) */
 .card {
-  max-width: 80%; /* Full width for mobile */
+  max-width: 80%; 
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -33,7 +31,7 @@ padding: 10px;
 }
 
 .card img {
-  max-width: 70%; /* Responsive image */
+  max-width: 70%; 
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -76,13 +74,12 @@ a:hover {
 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   .all{
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
-/* Desktop View (Three cards per row) */
 @media only screen and (min-width: 1025px) {
   .all {
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on desktop */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
