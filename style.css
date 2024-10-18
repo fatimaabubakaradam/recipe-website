@@ -1,69 +1,88 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+.all {
+  display: grid;
+gap: 10px;
+padding: 10px;
+}
+
+.chicken-list {
+  display: grid; /* Use grid layout for responsive control */
+  gap: 10px; /* Space between cards */
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* Default (Mobile-first) */
+.card {
+  max-width: 80%; /* Full width for mobile */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  max-width: 70%; /* Responsive image */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.method {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.ingredients {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.ingredients li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #ff4500;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .all{
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
   }
-  
-  h1 {
-    text-align: center;
+}
+
+/* Desktop View (Three cards per row) */
+@media only screen and (min-width: 1025px) {
+  .all {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row on desktop */
   }
-  
-  .chicken-list {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .card {
-    max-width: 600px;
-    width: 100%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .card img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .name {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .method {
-    font-size: 16px;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-  
-  .ingredients {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 20px;
-  }
-  
-  .ingredients li {
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-  
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff6347;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  a:hover {
-    background-color: #ff4500;
-  }
-  
+}
