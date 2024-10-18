@@ -39,7 +39,7 @@ const fetchMealData = async () => {
       
       const mealMethod = document.createElement('p');
       mealMethod.classList.add('method');
-      mealMethod.innerHTML = meal.strInstructions.substring(0, 100).replace(/\n/g, '<br>') + '...'; // Shorten instructions
+      mealMethod.innerHTML = meal.strInstructions.substring(0, 100).replace(/\n/g, '<br>') + '...';
       card.appendChild(mealMethod);
   
       
