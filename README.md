@@ -1,19 +1,20 @@
 # FATIMA’S KITCHEN ✦ Good Food. Beautifully Discovered.
 
-**Fatima’s Kitchen** is an international recipe discovery platform that connects food enthusiasts with handpicked recipes dynamically sourced from **TheMealDB API**.
+**Fatima’s Kitchen ✦** is an international recipe discovery platform that connects food enthusiasts with handpicked recipes dynamically sourced from **TheMealDB API**.
 
-Engineered with pure **HTML5**, **CSS3 (Cool-Toned Navy & Azure System)**, and modern **Vanilla JavaScript (ES6+)**, Fatima’s Kitchen offers a balanced light interface, visual category discovery, interactive recipe favoriting, asymmetric editorial cards, and quick-view detail modals.
+Engineered with pure **HTML5**, **CSS3 (Cyan & Indigo Spark Design System)**, and modern **Vanilla JavaScript (ES6+)**, Fatima’s Kitchen presents a cool-toned luxury visual experience with gradient typography, frosted glass search, ambient card hover physics, interactive recipe favoriting, asymmetric editorial cards, and quick-view detail modals.
 
 ---
 
-## 🌟 Distinctive Brand Features
+## 🌟 Distinctive & Captivating Features
 
-- **Refined Brand Wordmark**: `FATIMA’S KITCHEN ✦` featuring a minimalist spark mark and tagline *"Good food. Beautifully discovered."*
-- **Cool-Toned Visual Design Tokens**: Deep navy (`#0b1329`), slate navy (`#1e293b`), cool azure (`#0284c7`), indigo spark (`#6366f1`), and crisp off-white (`#fcfcfd`).
+- **Refined Brand Identity**: `FATIMA’S KITCHEN ✦` featuring an electric indigo spark mark and tagline *"Good food. Beautifully discovered."*
+- **Gradient Typography Accents**: Hero title featuring a multi-tone gradient overlay (*"GOOD FOOD. <span style="background: linear-gradient(135deg, #0b1329 0%, #0284c7 45%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">BEAUTIFULLY DISCOVERED.</span>"*).
+- **Frosted Glass & Ambient Search Glow**: Glassmorphism search box (`backdrop-filter: blur(16px)`) with ambient backdrop radial glow on focus.
 - **"Worth Making Tonight" Featured Section**: Asymmetric editorial layout formatting the top search result as a prominent 2-column featured hero card.
-- **Category Discovery Destinations**: Visual category cards (*Pasta, Chicken, Seafood, Dessert, Beef, Vegetarian*) that dynamically filter search queries on click.
+- **Category Discovery Destinations**: Visual category cards (*Pasta, Chicken, Seafood, Dessert, Beef, Vegetarian*) with 3D image scaling (`scale(1.1)`) and sliding arrow indicators.
 - **Favorites & Bookmarking System**: Save favorite recipes with heart buttons (`♡` / `♥`), stored in `localStorage`, filterable via the "Saved" view tab.
-- **Prominent Search Experience**:
+- **Search Experience**:
   - Hero search bar ("🔍 What are you craving today? Search recipes, meals or ingredients...").
   - Instant query clearing button (`×`).
   - Search feedback toast notification (*"Recipe found — We found X delicious recipes for you."*).
