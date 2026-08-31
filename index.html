@@ -3,34 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>recipe website</title>
+    <title>Fatima’s Kitchen ✦ Good food. Beautifully discovered.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <h1>Meal Finder</h1>
-        <div class="all"  id="all">
-          <div class="chicken-list" id="chicken-list">
-            <div class="card">
-              <img src="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg" alt="Chicken Handi">
-              <h2 class="name">Chicken Handi</h2>
-              <p class="method">
-                Take a large pot or wok, big enough to cook all<br>
-                the chicken, and heat the oil in it. Once the oil<br>
-                is hot, add sliced onion and fry them until deep<br>
-                gold.
-              </p>
-              <ul class="ingredients">
-                <li>Chicken - 1.2 kg</li>
-                <li>Onion - 5 thinly sliced</li>
-                <li>Tomatoes - 2 finely chopped</li>
-                <li>Garlic - 8 cloves chopped</li>
-                <li>Ginger paste - 1 tbsp</li>
-              </ul>
-              <a href="https://www.youtube.com/watch?v=IO0issT0Rmc" target="_blank">Watch Video</a>
-            </div>
-          </div>
-          
+
+    <!-- Header & Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo" aria-label="Fatima's Kitchen Homepage">
+                <div class="logo-mark">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">FATIMA’S KITCHEN <span class="spark">✦</span></span>
+                    <span class="brand-tagline">Good food. Beautifully discovered.</span>
+                </div>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#recipes-section" class="nav-link">Discover</a></li>
+                    <li><a href="#categories-section" class="nav-link">Categories</a></li>
+                    <li><a href="#about-section" class="nav-link">About</a></li>
+                    <li>
+                        <button id="favorites-tab-btn" class="nav-link favorites-nav-btn" aria-label="Saved Favorite Recipes">
+                            <span>Saved</span>
+                            <span class="heart-icon">♡</span>
+                            <span id="favorites-badge" class="favorites-badge">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
         </div>
-        <script src="script.js"></script>
-</body> 
-</html>      
+
+        <!-- Mobile Menu Drawer -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#" class="mobile-nav-link active">Home</a></li>
+                <li><a href="#recipes-section" class="mobile-nav-link">Discover Recipes</a></li>
+                <li><a href="#categories-section" class="mobile-nav-link">Categories</a></li>
+                <li><a href="#about-section" class="mobile-nav-link">About Fatima’s Kitchen</a></li>
+                <li><a href="#recipes-section" id="mobile-favorites-btn" class="mobile-nav-link">Saved Recipes (♡ <span id="mobile-fav-count">0</span>)</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero reveal-on-scroll">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="badge-spark">✦</span>
+                    <span>Editorial Culinary Discovery</span>
+                </div>
+                
+                <h1 class="hero-title">GOOD FOOD.<br>BEAUTIFULLY DISCOVERED.</h1>
+                <p class="hero-subtitle">Explore recipes, discover new flavors, and find something delicious to make today.</p>
+
+                <!-- Prominent Search Experience -->
+                <form class="search-form" id="search-form">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="search-input" class="search-input" placeholder="🔍 What are you craving today? Search recipes, meals or ingredients..." autocomplete="off" aria-label="Search recipes">
+                        <button type="button" id="clear-search-btn" class="clear-search-btn hidden" aria-label="Clear search query">&times;</button>
+                    </div>
+                    <button type="submit" class="search-submit-btn">
+                        <span>Discover</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Recommendation Tags -->
+                <div class="quick-tags" id="quick-tags">
+                    <span class="quick-tags-label">Popular Searches:</span>
+                    <div class="tag-pills">
+                        <button class="tag-pill" data-query="Chicken">Chicken</button>
+                        <button class="tag-pill" data-query="Pasta">Pasta</button>
+                        <button class="tag-pill" data-query="Rice">Rice</button>
+                        <button class="tag-pill" data-query="Beef">Beef</button>
+                        <button class="tag-pill" data-query="Seafood">Seafood</button>
+                        <button class="tag-pill" data-query="Dessert">Dessert</button>
+                        <button class="tag-pill" data-query="Vegetarian">Vegetarian</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Results Toast Notice -->
+        <div id="search-toast" class="search-toast hidden" role="status">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span id="toast-message">Recipe found — We found something delicious for you.</span>
+        </div>
+
+        <!-- Recipe Discovery Section -->
+        <section class="recipes-section" id="recipes-section">
+            <div class="section-container">
+                <div class="section-header reveal-on-scroll">
+                    <div>
+                        <span class="section-eyebrow" id="results-eyebrow">EDITORIAL SELECTION</span>
+                        <h2 class="section-title" id="results-title">Worth making tonight</h2>
+                    </div>
+                    <div class="section-controls">
+                        <button id="show-all-btn" class="filter-toggle-btn active">All Recipes</button>
+                        <button id="show-fav-btn" class="filter-toggle-btn">Saved (♡ <span id="saved-count-btn">0</span>)</button>
+                        <span class="results-count-badge" id="results-count">0 recipes</span>
+                    </div>
+                </div>
+
+                <!-- Skeleton Cards Container -->
+                <div class="skeleton-grid hidden" id="skeleton-container"></div>
+
+                <!-- Preserving id="all" for dynamic API meal grid -->
+                <div class="all reveal-on-scroll" id="all">
+                    <!-- Default HTML Card fallback -->
+                    <div class="chicken-list" id="chicken-list">
+                        <div class="card">
+                            <img src="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg" alt="Chicken Handi">
+                            <h2 class="name">Chicken Handi</h2>
+                            <p class="method">
+                                Take a large pot or wok, big enough to cook all the chicken, and heat the oil in it...
+                            </p>
+                            <ul class="ingredients">
+                                <li>Chicken - 1.2 kg</li>
+                                <li>Onion - 5 thinly sliced</li>
+                                <li>Tomatoes - 2 finely chopped</li>
+                            </ul>
+                            <a href="https://www.youtube.com/watch?v=IO0issT0Rmc" target="_blank">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty Search State -->
+                <div class="empty-state hidden" id="empty-state">
+                    <div class="empty-icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                    <h3 class="empty-title">Nothing delicious yet.</h3>
+                    <p class="empty-text" id="empty-message">Try another recipe, ingredient or cuisine.</p>
+                    <button class="empty-reset-btn" id="empty-reset-btn">Search again</button>
+                </div>
+
+                <!-- Error State -->
+                <div class="error-state hidden" id="error-state">
+                    <div class="error-icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <h3 class="error-title">Something went wrong.</h3>
+                    <p class="error-text">We couldn't load the recipes right now. Please try again.</p>
+                    <button class="error-retry-btn" id="error-retry-btn">Try Again</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Discovery Section -->
+        <section class="categories-section reveal-on-scroll" id="categories-section">
+            <div class="section-container">
+                <div class="categories-header">
+                    <span class="section-eyebrow">DESTINATIONS</span>
+                    <h2 class="section-title">Explore Cuisines & Categories</h2>
+                </div>
+                <div class="category-cards-grid">
+                    <div class="category-card" data-category="Pasta">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?q=80&w=600&auto=format&fit=crop" alt="Pasta Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Pasta</h3>
+                        <span class="cat-card-sub">Artisanal & Classic</span>
+                    </div>
+
+                    <div class="category-card" data-category="Chicken">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=600&auto=format&fit=crop" alt="Chicken Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Chicken</h3>
+                        <span class="cat-card-sub">Savory & Roasted</span>
+                    </div>
+
+                    <div class="category-card" data-category="Seafood">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=600&auto=format&fit=crop" alt="Seafood Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Seafood</h3>
+                        <span class="cat-card-sub">Ocean Fresh</span>
+                    </div>
+
+                    <div class="category-card" data-category="Dessert">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=600&auto=format&fit=crop" alt="Dessert Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Dessert</h3>
+                        <span class="cat-card-sub">Sweet Delights</span>
+                    </div>
+
+                    <div class="category-card" data-category="Beef">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Beef Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Beef</h3>
+                        <span class="cat-card-sub">Hearty & Tender</span>
+                    </div>
+
+                    <div class="category-card" data-category="Vegetarian">
+                        <div class="cat-img-box">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Vegetarian Recipes" loading="lazy">
+                        </div>
+                        <h3 class="cat-card-title">Vegetarian</h3>
+                        <span class="cat-card-sub">Wholesome Greens</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Fatima's Kitchen Section -->
+        <section class="about-section reveal-on-scroll" id="about-section">
+            <div class="about-container">
+                <div class="about-image-column">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" alt="Variety of delicious gourmet recipes and dishes spread at Fatima's Kitchen" class="about-img" loading="lazy">
+                </div>
+                <div class="about-content-column">
+                    <span class="about-eyebrow">OUR PHILOSOPHY</span>
+                    <h2 class="about-title">About Fatima’s Kitchen</h2>
+                    <p class="about-lead">Fatima’s Kitchen is built on a simple belief: home cooking should be an inspiring, joyful, and deeply satisfying discovery.</p>
+                    <p class="about-body">We curate recipes from international culinary traditions, making it effortless to discover vibrant flavors, master techniques, and elevate everyday cooking into memorable dining experiences.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Global Recipes</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Real API Data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-on-scroll">
+            <div class="newsletter-container">
+                <span class="newsletter-eyebrow">STAY CONNECTED</span>
+                <h2 class="newsletter-title">Stay Inspired</h2>
+                <p class="newsletter-subtitle">Discover recipes, cooking ideas and delicious inspiration delivered straight to your inbox.</p>
+                <form class="inline-newsletter-form" id="inline-newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+                    <button type="submit" class="newsletter-submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Detail Quick View Modal -->
+    <div class="modal-backdrop hidden" id="modal-backdrop">
+        <div class="recipe-modal" id="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-meal-name">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Tasteful Delayed Newsletter Popup Modal -->
+    <div class="newsletter-modal-backdrop hidden" id="newsletter-modal-backdrop">
+        <div class="newsletter-popup-card">
+            <button class="newsletter-close-btn" id="newsletter-close-btn" aria-label="Close newsletter prompt">&times;</button>
+            <div class="newsletter-popup-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3 class="newsletter-popup-title">A little inspiration for your inbox.</h3>
+            <p class="newsletter-popup-text">Get delicious recipe inspiration from Fatima’s Kitchen.</p>
+            <form class="newsletter-popup-form" id="newsletter-popup-form">
+                <input type="email" placeholder="Your email address" required aria-label="Email address for popup newsletter">
+                <button type="submit" class="popup-subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Strict Requirements: "Made by Fatima", "fatimaabubakaradamg@gmail.com", "© 2024 Fatima’s Kitchen" -->
+    <footer class="site-footer" id="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand-column">
+                <a href="#" class="brand-logo footer-logo">
+                    <div class="logo-mark light">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name light">FATIMA’S KITCHEN ✦</span>
+                        <span class="brand-tagline light">Good food. Beautifully discovered.</span>
+                    </div>
+                </a>
+                <p class="footer-bio">A sophisticated culinary discovery experience celebrating international flavors, home cooking, and beautiful recipes.</p>
+            </div>
+
+            <div class="footer-links-column">
+                <h4 class="footer-nav-title">Quick Links</h4>
+                <ul class="footer-nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#recipes-section">Discover Recipes</a></li>
+                    <li><a href="#categories-section">Categories</a></li>
+                    <li><a href="#about-section">About Fatima’s Kitchen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-column">
+                <h4 class="footer-nav-title">Contact & Credits</h4>
+                <p class="footer-contact-item"><strong>Made by Fatima</strong></p>
+                <p class="footer-contact-item">Email: <a href="mailto:fatimaabubakaradamg@gmail.com">fatimaabubakaradamg@gmail.com</a></p>
+                <p class="footer-contact-item">Powered by TheMealDB API Integration</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Fatima’s Kitchen. All rights reserved.</p>
+                <p class="footer-signature">Crafted with passion • Made by Fatima</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
